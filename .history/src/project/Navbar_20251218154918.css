@@ -1,0 +1,99 @@
+/* ================= MODAL ================= */
+.modal-content {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.modal-title {
+  font-weight: 700;
+}
+
+/* ================= FORM ================= */
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  margin-top: 6px;
+}
+
+.auth-input:focus {
+  border-color: #2563eb;
+}
+
+/* Two column */
+.name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ================= PASSWORD ================= */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper span {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6b7280;
+}
+
+/* ================= BUTTON ================= */
+.auth-btn {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #0d6efd;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
+
+/* ================= FOOTER ================= */
+.auth-footer {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.9rem;
+}
+
+.auth-footer span {
+  color: #0d6efd;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ================= MESSAGE ================= */
+.modal-message {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.modal-message.success {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.modal-message.error {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.error-text {
+  font-size: 0.75rem;
+  color: red;
+  margin-top: 4px;
+}

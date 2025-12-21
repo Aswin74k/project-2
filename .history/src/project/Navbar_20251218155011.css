@@ -1,0 +1,316 @@
+/* ================= NAVBAR BASE ================= */
+.navbar {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  padding: 14px 0;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar-scrolled {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* ================= BRAND ================= */
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #fff !important;
+}
+
+.nav-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ================= NAV LINKS ================= */
+.navbar-nav .nav-link {
+  color: #e5e7eb !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  position: relative;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 0%;
+  height: 2px;
+  background: #6366f1;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 60%;
+}
+
+/* ================= SEARCH BAR ================= */
+.custom-search {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 8px 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 240px;
+  transition: 0.3s ease;
+}
+
+.custom-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.custom-search input::placeholder {
+  color: #9ca3af;
+}
+
+.search-left-icon {
+  font-size: 1rem;
+  color: #9ca3af;
+}
+
+.custom-search:focus-within {
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ================= USER ================= */
+.username {
+  background: rgba(99, 102, 241, 0.15);
+  color: #c7d2fe;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.user-icon {
+  color: #fff;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.user-icon:hover {
+  color: #6366f1;
+  transform: scale(1.15);
+}
+
+/* ================= LOGOUT ================= */
+.logout-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 77, 77, 0.4);
+  color: #ff6b6b;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 77, 77, 0.15);
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+}
+
+/* ================= TOGGLER ================= */
+.navbar-toggler {
+  border: none !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ================= MODAL BASE ================= */
+/* ================= MODAL OVERLAY ================= */
+/* ================= MODAL ================= */
+.modal-content {
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.modal-title {
+  font-weight: 700;
+}
+
+/* ================= FORM ================= */
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 14px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  margin-top: 6px;
+}
+
+.auth-input:focus {
+  border-color: #2563eb;
+}
+
+/* Two column */
+.name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ================= PASSWORD ================= */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper span {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6b7280;
+}
+
+/* ================= BUTTON ================= */
+.auth-btn {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #0d6efd;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
+
+/* ================= FOOTER ================= */
+.auth-footer {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.9rem;
+}
+
+.auth-footer span {
+  color: #0d6efd;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ================= MESSAGE ================= */
+.modal-message {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.modal-message.success {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.modal-message.error {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.error-text {
+  font-size: 0.75rem;
+  color: red;
+  margin-top: 4px;
+}
+
+/* ================= BUTTON ================= */
+.auth-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 14px;
+  background: #146cff;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 10px;
+  transition: 0.2s ease;
+}
+
+.auth-btn:hover {
+  background: #0f5ae0;
+}
+
+/* ================= FOOTER TEXT ================= */
+.auth-footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.auth-footer span {
+  color: #146cff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-footer span:hover {
+  text-decoration: underline;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 576px) {
+  .name-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= MESSAGE ================= */
+.modal-message {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.modal-message.success {
+  background: rgba(0, 255, 170, 0.15);
+  color: #4ade80;
+}
+
+.modal-message.error {
+  background: rgba(255, 77, 77, 0.15);
+  color: #ff6b6b;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: linear-gradient(135deg, #020617, #020617);
+    padding: 18px;
+    border-radius: 14px;
+    margin-top: 10px;
+  }
+
+  .custom-search {
+    width: 100%;
+    margin-top: 12px;
+  }
+}

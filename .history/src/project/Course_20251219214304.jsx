@@ -1,0 +1,221 @@
+import React from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import "./course.css";
+
+const courseData = {
+  fullstack: {
+    title: "Full Stack Development",
+    fee: "₹25,000",
+    duration: "4 Months",
+    syllabus: [
+      "HTML, CSS, Bootstrap",
+      "JavaScript (ES6+)",
+      "React JS",
+      "Python & Django",
+      "MySQL",
+      "Full Stack Projects"
+    ]
+  },
+
+  mern: {
+    title: "MERN Stack Development",
+    fee: "₹28,000",
+    duration: "4.5 Months",
+    syllabus: [
+      "MongoDB",
+      "Express JS",
+      "React JS",
+      "Node JS",
+      "REST APIs",
+      "MERN Projects"
+    ]
+  },
+
+  frontend: {
+    title: "Frontend Development",
+    fee: "₹18,000",
+    duration: "3 Months",
+    syllabus: [
+      "HTML5 & CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "React JS",
+      "Responsive Design",
+      "Frontend Projects"
+    ]
+  },
+
+  backend: {
+    title: "Backend Development",
+    fee: "₹20,000",
+    duration: "3.5 Months",
+    syllabus: [
+      "Python / Node.js",
+      "Django / Express",
+      "REST APIs",
+      "Authentication",
+      "Database Integration",
+      "Backend Projects"
+    ]
+  },
+
+  cloud: {
+    title: "Cloud Computing",
+    fee: "₹30,000",
+    duration: "3 Months",
+    syllabus: [
+      "Cloud Fundamentals",
+      "AWS / Azure Services",
+      "EC2, S3, IAM",
+      "Serverless Computing",
+      "Cloud Deployment",
+      "Monitoring & Security"
+    ]
+  },
+
+  datascience: {
+    title: "Data Science",
+    fee: "₹35,000",
+    duration: "5 Months",
+    syllabus: [
+      "Python for Data Science",
+      "Statistics",
+      "Pandas & NumPy",
+      "Data Visualization",
+      "Machine Learning Basics",
+      "Real-Time Projects"
+    ]
+  },
+
+  ai: {
+    title: "Artificial Intelligence",
+    fee: "₹40,000",
+    duration: "5 Months",
+    syllabus: [
+      "AI Fundamentals",
+      "Search Algorithms",
+      "Machine Learning",
+      "Neural Networks",
+      "Deep Learning Basics",
+      "AI Projects"
+    ]
+  },
+
+  cybersecurity: {
+    title: "Cyber Security",
+    fee: "₹32,000",
+    duration: "4 Months",
+    syllabus: [
+      "Cyber Security Basics",
+      "Networking Fundamentals",
+      "Ethical Hacking",
+      "Web Security",
+      "Penetration Testing",
+      "Security Tools & Labs"
+    ]
+  }
+};
+
+export default function Course() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const course = courseData[id];
+
+  if (!course) {
+    return <h2 className="not-found">Course Not Found</h2>;
+  }
+
+  const handleEnroll = () => {
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (user) {
+      navigate("/enroll", { state: { courseId: id } });
+    } else {
+      window.dispatchEvent(new CustomEvent("showLoginModal"));
+    }
+  };
+
+  return (
+    <div className="course-container">
+
+      {/* HERO SECTION */}
+      <section className="course-header">
+        <div className="course-hero">
+          <h1 className="course-title">{course.title}</h1>
+
+          <p className="course-subtitle">
+            Industry-focused training with live projects, expert mentorship,
+            and career guidance.
+          </p>
+
+          <div className="course-stats">
+            <div>
+              <span>Duration</span>
+              <h3>{course.duration}</h3>
+            </div>
+            <div>
+              <span>Course Fee</span>
+              <h3>{course.fee}</h3>
+            </div>
+            <div>
+              <span>Level</span>
+              <h3>Beginner → Advanced</h3>
+            </div>
+          </div>
+
+          {/* SINGLE ENROLL BUTTON */}
+          <button className="enroll-main-btn hero-btn" onClick={handleEnroll}>
+            Enroll Now
+          </button>
+        </div>
+      </section>
+
+      {/* CONTENT */}
+      <div className="course-content">
+
+        <div className="info-box">
+          <h3>Course Overview</h3>
+          <p>
+            The <b>{course.title}</b> course is designed to make students
+            industry-ready through structured learning, hands-on practice,
+            and real-world applications.
+          </p>
+        </div>
+
+        <div className="syllabus-box">
+          <h3>Syllabus</h3>
+          <ul>
+            {course.syllabus.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        {/* INFO CARD */}
+        <div className="enroll-section">
+          <div className="enroll-card">
+            <h2>Course Details</h2>
+
+            <div className="enroll-details">
+              <div>
+                <span>Fee</span>
+                <h3>{course.fee}</h3>
+              </div>
+              <div>
+                <span>Duration</span>
+                <h3>{course.duration}</h3>
+              </div>
+            </div>
+
+            <ul className="enroll-features">
+              <li>✔ Live Instructor-Led Sessions</li>
+              <li>✔ Industry-Level Projects</li>
+              <li>✔ Certificate on Completion</li>
+              <li>✔ Career & Placement Support</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}

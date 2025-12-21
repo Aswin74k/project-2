@@ -1,0 +1,150 @@
+/* =========================
+   BASE
+========================= */
+.about-wrapper {
+  padding: clamp(100px, 12vw, 140px) 0 80px;
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  font-family: "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 clamp(16px, 4vw, 24px);
+}
+
+/* =========================
+   HEADER
+========================= */
+.about-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  text-align: center;
+  color: #0f172a;
+  margin-bottom: 14px;
+  letter-spacing: -0.03em;
+}
+
+.about-subtitle {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 60px;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: #475569;
+  line-height: 1.8;
+}
+
+/* =========================
+   SECTION
+========================= */
+.section {
+  margin-bottom: 70px;
+}
+
+.section h3 {
+  font-size: clamp(1.4rem, 3vw, 1.7rem);
+  color: #2563eb;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.section p {
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  color: #334155;
+  line-height: 1.85;
+  max-width: 900px;
+}
+
+/* =========================
+   GLASS BOX
+========================= */
+.glass-box {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  border-radius: 22px;
+  padding: clamp(22px, 4vw, 32px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 25px 50px rgba(2, 6, 23, 0.08);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* =========================
+   LIST
+========================= */
+.glass-box ul {
+  padding: 0;
+  margin: 0;
+}
+
+.glass-box ul li {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  color: #334155;
+  margin-bottom: 14px;
+  line-height: 1.75;
+}
+
+.glass-box ul li::before {
+  content: "✓";
+  color: #2563eb;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* =========================
+   WHY CHOOSE GRID
+========================= */
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(18px, 4vw, 28px);
+  margin-top: 30px;
+}
+
+.choose-card {
+  background: #ffffff;
+  padding: clamp(24px, 4vw, 32px);
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.choose-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.14);
+}
+
+.choose-card h4 {
+  font-size: clamp(1.15rem, 3vw, 1.35rem);
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-bottom: 10px;
+}
+
+.choose-card p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

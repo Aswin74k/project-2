@@ -1,0 +1,328 @@
+/* ===================== GLOBAL ===================== */
+.home {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #222;
+  overflow-x: hidden;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  font-weight: 800;
+  margin-bottom: 50px;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 680px;
+  margin: 12px auto 60px;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  color: #475569;
+  line-height: 1.75;
+}
+
+/* ===================== HERO ===================== */
+.hero-section {
+  min-height: 90vh;
+  background:
+    linear-gradient(rgba(13, 27, 42, 0.85), rgba(13, 27, 42, 0.85)),
+    url("https://images.unsplash.com/photo-1523240795612-9a054b0db644");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-content span {
+  color: #4da3ff;
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  line-height: 1.7;
+  margin-bottom: 35px;
+  color: #e6e6e6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.hero-actions .btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+}
+
+/* ===================== STATS ===================== */
+.stats-section {
+  background: #f8f9fa;
+  padding: 60px 0;
+}
+
+.stat-box {
+  background: #fff;
+  text-align: center;
+  padding: 35px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.stat-box svg {
+  font-size: 36px;
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+.stat-box h3 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.stat-box p {
+  font-size: 15px;
+  color: #666;
+}
+
+.stat-box:hover {
+  transform: translateY(-8px);
+}
+
+/* ===================== COURSES ===================== */
+.courses-section {
+  padding: 80px 0;
+}
+
+.course-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.course-img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.course-card .card-body {
+  padding: 22px;
+}
+
+.course-card .card-title {
+  font-size: 18px;
+  font-weight: 600;
+  min-height: 50px;
+}
+
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.course-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: #f4b400;
+}
+
+.course-card .btn {
+  border-radius: 25px;
+  font-weight: 500;
+}
+
+/* ================= CAREER PATHS SECTION ================= */
+.paths-section {
+  padding: clamp(80px, 8vw, 110px) 0;
+  background:
+    radial-gradient(circle at top right, rgba(59,130,246,0.08), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(99,102,241,0.08), transparent 40%),
+    linear-gradient(180deg, #f8fafc, #ffffff);
+}
+
+/* Titles */
+.section-title {
+  text-align: center;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 720px;
+  margin: 14px auto 60px;
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.75;
+}
+
+/* ================= GRID ================= */
+.paths-grid {
+  display: grid;
+grid-template-columns: repeat(4, 1fr);  gap: 30px;
+}
+
+/* ================= CARD ================= */
+.path-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 34px 30px;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(226,232,240,0.9);
+  box-shadow:
+    0 20px 40px rgba(15,23,42,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  transition: all 0.4s ease;
+}
+
+.path-card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 30px 70px rgba(15,23,42,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+  border-color: rgba(59,130,246,0.35);
+}
+
+/* Card Content */
+.path-card h4 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 10px;
+}
+
+.path-card p {
+  font-size: 0.97rem;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+/* List */
+.path-card ul {
+  padding: 0;
+  margin: 0 0 26px;
+}
+
+.path-card ul li {
+  list-style: none;
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 12px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.path-card ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.path-outcome {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e0ecff, #eef2ff);
+  box-shadow: inset 0 0 0 1px rgba(59,130,246,0.25);
+}
+
+@media (max-width: 1200px) {
+  .paths-grid {
+    grid-template-columns: repeat(3, 1fr); 
+  }
+}
+
+@media (max-width: 992px) {
+  .paths-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 576px) {
+  .paths-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+
+.footer {
+  background: #0d1b2a;
+  color: #fff;
+  padding: 50px 20px;
+  margin-top: 80px;
+}
+
+.footer h3 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.footer p {
+  color: #ccc;
+}
+
+.copy {
+  font-size: 14px;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-section {
+    min-height: 80vh;
+    padding: 40px 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .course-img {
+    height: 160px;
+  }
+
+  .footer h3 {
+    font-size: 22px;
+  }
+}

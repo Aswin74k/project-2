@@ -1,0 +1,117 @@
+/* GLOBAL WRAPPER */
+.course-container {
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  background: #f5f7fb;
+}
+
+.course-header {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  border-bottom: 6px solid #0d6efd;
+  border-radius: 0 0 25px 25px;
+}
+
+.course-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(55%) saturate(110%);
+}
+
+.course-title {
+  position: absolute;
+  bottom: 35px;
+  left: 50px;
+  color: #070707;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1.3s ease-in-out;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.course-content {
+  padding: 50px 0;
+}
+
+/* INFO & SYLLABUS CARD */
+.info-box,
+.syllabus-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.10);
+  transition: 0.3s ease;
+  border-left: 6px solid #0d6efd;
+}
+
+.info-box:hover,
+.syllabus-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* TITLES */
+.info-box h3,
+.syllabus-box h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #0d6efd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.details-list li {
+  margin-bottom: 12px;
+  font-size: 18px;
+  padding-left: 5px;
+  color: #333;
+}
+
+/* SYLLABUS LIST */
+.syllabus-box ul {
+  padding-left: 20px;
+}
+
+.syllabus-box li {
+  font-size: 18px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* ENROLL BUTTON */
+.enroll-btn {
+  background: linear-gradient(135deg, #0d6efd, #0061d5);
+  border: none;
+  padding: 12px 26px;
+  font-size: 18px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.enroll-btn:hover {
+  background: linear-gradient(135deg, #0058c9, #004bb5);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.4);
+}
+
+

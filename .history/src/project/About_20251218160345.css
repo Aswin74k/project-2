@@ -1,0 +1,182 @@
+/* =========================
+   PAGE BASE
+========================= */
+.about-wrapper {
+  padding: 120px 0 70px;
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.about-title {
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  text-align: center;
+  color: #0f172a;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.about-subtitle {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 60px;
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.75;
+}
+
+/* =========================
+   SECTION
+========================= */
+.section {
+  margin-bottom: 60px;
+}
+
+.section h3 {
+  font-size: 1.65rem;
+  color: #2563eb;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.section p {
+  font-size: 1.05rem;
+  color: #334155;
+  line-height: 1.8;
+  max-width: 900px;
+}
+
+/* =========================
+   GLASS CONTENT BOX
+========================= */
+.glass-box {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 30px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.08);
+  animation: fadeUp 0.7s ease forwards;
+}
+
+/* =========================
+   LIST
+========================= */
+.glass-box ul {
+  padding: 0;
+  margin: 0;
+}
+
+.glass-box ul li {
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 1.05rem;
+  color: #334155;
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+.glass-box ul li::before {
+  content: "✓";
+  color: #2563eb;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* =========================
+   WHY CHOOSE US GRID
+========================= */
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+
+.choose-card {
+  background: #ffffff;
+  padding: 30px 26px;
+  border-radius: 22px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.choose-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+}
+
+.choose-card h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-bottom: 10px;
+}
+
+.choose-card p {
+  font-size: 0.98rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.1rem;
+  }
+
+  .about-subtitle {
+    font-size: 0.98rem;
+    margin-bottom: 45px;
+  }
+
+  .section {
+    margin-bottom: 45px;
+  }
+
+  .choose-card {
+    padding: 26px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-wrapper {
+    padding-top: 100px;
+  }
+
+  .choose-grid {
+    gap: 20px;
+  }
+}

@@ -1,0 +1,152 @@
+/* =========================
+   GLOBAL PAGE STYLING
+========================= */
+.about-wrapper {
+  padding-top: 120px;
+  padding-bottom: 60px;
+  background: linear-gradient(135deg, #eef2f3 0%, #ffffff 100%);
+  font-family: "Inter", sans-serif;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+.about-container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   HEADING
+========================= */
+.about-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.about-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.15rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 50px;
+}
+
+/* =========================
+   SECTION BLOCK
+========================= */
+.section {
+  margin-bottom: 50px;
+}
+
+.section h3 {
+  font-size: 1.7rem;
+  color: #0d6efd;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.section p,
+.section ul {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.75;
+}
+
+/* =========================
+   GLOW BOX
+========================= */
+.glass-box {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeInUp 0.7s ease;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* =========================
+   WHY CHOOSE US GRID
+========================= */
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.choose-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.choose-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.choose-card h4 {
+  color: #0d6efd;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.choose-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* =========================
+   CUSTOM BULLET POINTS
+========================= */
+.glass-box ul li {
+  margin-bottom: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.glass-box ul li:before {
+  content: "✔";
+  color: #0d6efd;
+  font-weight: bold;
+}
+
+/* =========================
+   RESPONSIVE FIXES
+========================= */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+  }
+}
+

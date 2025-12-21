@@ -1,0 +1,118 @@
+/* ================= PAGE LAYOUT ================= */
+
+.enroll-page {
+  height: calc(100vh - 70px); /* adjust 70px if navbar height differs */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f3f6fd, #e9efff);
+  font-family: "Poppins", sans-serif;
+
+  overflow: hidden; /* 🔒 NO SCROLL */
+}
+
+/* ================= CARD ================= */
+
+.enroll-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  padding: 32px 32px;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+
+  max-height: 90%;
+}
+
+/* ================= TITLE ================= */
+
+.enroll-container h2 {
+  text-align: center;
+  color: #0d6efd;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ================= FORM ================= */
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #d1d9f0;
+  transition: all 0.25s ease;
+}
+
+.form-group input:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+/* ================= ERRORS ================= */
+
+.field-error {
+  font-size: 12px;
+  margin-top: 4px;
+  color: #dc3545;
+}
+
+/* ================= BUTTONS ================= */
+
+.enroll-actions {
+  margin-top: 20px;
+}
+
+.enroll-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #0d6efd, #084cdf);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.enroll-btn:hover {
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.35);
+}
+
+/* BACK LINK */
+.back-btn {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0d6efd;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* ================= NO MOBILE SCROLL ================= */
+
+@media (max-width: 600px) {
+  .enroll-container {
+    padding: 26px 22px;
+  }
+}

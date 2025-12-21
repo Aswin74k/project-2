@@ -1,0 +1,33 @@
+/* Search box style */
+.search-box {
+  border: 2px solid #000;
+  border-radius: 30px;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.search-box input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Navbar link animations */
+.nav-link {
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #007bff;
+  transform: translateY(-2px);
+}
+
+
+
+

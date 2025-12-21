@@ -1,0 +1,213 @@
+.course-container {
+  font-family: "Poppins", sans-serif;
+  color: #1a1a1a;
+  background: #f3f6fd;
+  padding-bottom: 60px;
+}
+
+/* ================= HEADER ================= */
+
+.course-header {
+  position: relative;
+  height: 380px;
+  border-radius: 0 0 30px 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+.course-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.course-title {
+  position: absolute;
+  bottom: 35px;
+  left: 50px;
+  font-size: 50px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1.2s ease;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= CONTENT ================= */
+
+.course-content {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* ================= INFO & SYLLABUS ================= */
+
+.info-box,
+.syllabus-box {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 22px;
+  border-left: 6px solid #0d6efd;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.info-box:hover,
+.syllabus-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.info-box h3,
+.syllabus-box h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0d6efd;
+  margin-bottom: 20px;
+}
+
+.info-box p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.syllabus-box ul {
+  padding-left: 22px;
+}
+
+.syllabus-box li {
+  font-size: 18px;
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
+
+/* ================= ENROLL SECTION ================= */
+
+.enroll-section {
+  display: flex;
+  justify-content: center;
+}
+
+.enroll-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.enroll-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.15);
+}
+
+.enroll-card h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #0d6efd;
+}
+
+.enroll-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.enroll-details span {
+  display: block;
+  font-size: 14px;
+  color: #555;
+}
+
+.enroll-details h3 {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.enroll-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.enroll-features li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* ================= BUTTON ================= */
+
+.enroll-main-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #0d6efd, #0047c2);
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enroll-main-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(13, 110, 253, 0.35);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .course-header {
+    height: 300px;
+  }
+
+  .course-title {
+    font-size: 36px;
+    left: 30px;
+    bottom: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .course-header {
+    height: 250px;
+  }
+
+  .course-title {
+    font-size: 28px;
+    left: 20px;
+    bottom: 25px;
+  }
+
+  .info-box,
+  .syllabus-box {
+    padding: 22px;
+  }
+
+  .enroll-details {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

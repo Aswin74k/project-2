@@ -1,0 +1,109 @@
+/* MAIN NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 14px ;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: 0.3s ease;
+}
+
+/* Dark mode background */
+.navbar.dark {
+  background: #0d0c0d;
+  color: white;
+}
+
+/* Light mode background */
+.navbar.light {
+  background: white;
+  color: black;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* Container */
+.nav-container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links li {
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-links li:hover {
+  opacity: 0.7;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: inherit;
+  padding: 6px 15px;
+  border-radius: 30px;
+  border: 2px solid currentColor;
+  position: relative;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  width: 150px;
+  font-size: 0.95rem;
+}
+
+.search-icon {
+  margin-left: 10px;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* Theme button */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: inherit;
+  transition: 0.2s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* RESPONSIVE */
+@media (max-width: 820px) {
+  .nav-links {
+    display: none;
+  }
+
+  .search-box input {
+    width: 110px;
+  }
+}
+
+
+
+
