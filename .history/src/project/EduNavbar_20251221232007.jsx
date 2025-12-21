@@ -49,13 +49,12 @@ useEffect(() => {
         setSignupMsg("");
         setFormError("");
 
-       const redirectPath =
-  sessionStorage.getItem("redirectAfterLogin");
-
-if (redirectPath) {
-  sessionStorage.removeItem("redirectAfterLogin");
-  navigate(redirectPath);
-}
+        const redirectPath =
+          sessionStorage.getItem("redirectAfterLogin");
+        if (redirectPath) {
+          sessionStorage.removeItem("redirectAfterLogin");
+          navigate(redirectPath);
+        }
       }, 1500);
 
       return () => clearTimeout(timer);

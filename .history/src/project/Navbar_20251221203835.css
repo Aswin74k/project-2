@@ -1,0 +1,395 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --primary: #4f46e5;
+  --primary-light: rgba(79, 70, 229, 0.12);
+  --danger: #ef4444;
+  --success: #22c55e;
+  --text-dark: #111827;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  background: #ffffff;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar-scrolled {
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= BRAND ================= */
+
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: var(--text-dark) !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ================= NAV LINKS ================= */
+
+.navbar-nav .nav-link {
+  color: var(--text-dark) !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary) !important;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 70%;
+}
+
+/* ================= SEARCH ================= */
+
+.custom-search {
+  position: relative;
+  width: 210px;
+}
+
+.custom-search input {
+  width: 100%;
+  padding: 10px 44px 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: rgb(224, 223, 223);
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  transition: all 0.25s ease;
+}
+
+.custom-search input::placeholder {
+  color: var(--text-muted);
+}
+
+.custom-search input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* SEARCH ICON – RIGHT SIDE */
+.custom-search svg {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* ================= USER / AUTH ================= */
+
+.username {
+  background: var(--primary-light);
+  color: #23232a;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.user-icon {
+  height: 34px;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.user-icon:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+
+
+/* ================= TOGGLER ================= */
+
+.navbar-toggler {
+  border: none !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(0);
+}
+
+.modal-content {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+  padding: 18px;
+
+}
+
+.modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.btn-close {
+  opacity: 0.6;
+}
+
+.btn-close:hover {
+  opacity: 1;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.auth-input {
+  width: 100%;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid #686565;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.auth-input::placeholder {
+  color: var(--text-muted);
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* ================= TWO COLUMN ================= */
+.name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ================= PASSWORD ================= */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper span {
+  position: absolute;
+  right: 14px;
+  top: 40%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.password-wrapper span:hover {
+  color: var(--primary);
+}
+
+.auth-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.25s ease;
+}
+
+.auth-btn:hover {
+  background: #4338ca;
+}
+
+.auth-footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.auth-footer span {
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-footer span:hover {
+  text-decoration: underline;
+}
+
+.modal-message {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.modal-message.success {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--success);
+}
+
+.modal-message.error {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: linear-gradient(135deg, #020617, #020617);
+    padding: 18px;
+    border-radius: 16px;
+    margin-top: 10px;
+  }
+
+  .custom-search {
+    width: 100%;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .name-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= LOGOUT ICON ================= */
+.logout-icon {
+  font-size: 24px;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.logout-icon:hover {
+  color: var(--danger);
+  transform: scale(1.1);
+}
+
+/* ================= LOGOUT MODAL ================= */
+.logout-modal .modal-content {
+  border-radius: 22px;
+  border: none;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+  padding: 26px;
+}
+
+/* icon circle */
+.logout-modal .logout-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 0 auto 18px;
+}
+
+/* title */
+.logout-modal .logout-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+/* text */
+.logout-modal .logout-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* buttons wrapper */
+.logout-modal .logout-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* cancel button */
+.logout-modal .logout-cancel {
+  padding: 10px 24px;
+  border-radius: 14px;
+  background: #fff;
+  border: 2px solid #000;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.logout-modal .logout-cancel:hover {
+  background: #f9fafb;
+}
+
+/* logout button */
+.logout-modal .logout-confirm {
+  padding: 10px 24px;
+  border-radius: 14px;
+  background: var(--danger);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.logout-modal .logout-confirm:hover {
+  opacity: 0.9;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 576px) {
+  .logout-modal .logout-actions {
+    flex-direction: column;
+  }
+
+  .logout-modal .logout-cancel,
+  .logout-modal .logout-confirm {
+    width: 100%;
+  }
+}

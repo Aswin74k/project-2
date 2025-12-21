@@ -4,7 +4,7 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true); // ✅ ADD THIS
 
   useEffect(() => {
     const savedUser = JSON.parse(

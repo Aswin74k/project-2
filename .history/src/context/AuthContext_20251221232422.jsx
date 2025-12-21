@@ -4,14 +4,14 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true); // ✅ ADD THIS
 
   useEffect(() => {
     const savedUser = JSON.parse(
       localStorage.getItem("loggedInUser")
     );
     if (savedUser) setUser(savedUser);
-    setLoading(false); 
+    setLoading(false); // ✅ IMPORTANT
   }, []);
 
   const login = (email, password) => {

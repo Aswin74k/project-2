@@ -4,14 +4,18 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true); // ✅ ADD THIS
 
   useEffect(() => {
     const savedUser = JSON.parse(
       localStorage.getItem("loggedInUser")
     );
-    if (savedUser) setUser(savedUser);
-    setLoading(false); 
+
+    if (savedUser) {
+      setUser(savedUser);
+    }
+
+    setLoading(false); // ✅ IMPORTANT
   }, []);
 
   const login = (email, password) => {
@@ -23,7 +27,10 @@ export function AuthProvider({ children }) {
     );
 
     if (!foundUser) {
-      return { success: false, message: "Invalid email or password" };
+      return {
+        success: false,
+        message: "Invalid email or password",
+      };
     }
 
     localStorage.setItem(
@@ -74,7 +81,7 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, login, signup, logout, loading }} 
+      value={{ user, loading, login, signup, logout }} // ✅ expose loading
     >
       {children}
     </AuthContext.Provider>

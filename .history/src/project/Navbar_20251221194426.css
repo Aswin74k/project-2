@@ -1,0 +1,265 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: rgba(79, 70, 229, 0.12);
+  --danger: #ef4444;
+  --success: #22c55e;
+  --text-dark: #111827;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
+  --bg-soft: #f9fafb;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  background: #ffffff;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar-scrolled {
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.14);
+}
+
+/* ================= BRAND ================= */
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-dark) !important;
+}
+
+/* ================= NAV LINKS ================= */
+.navbar-nav .nav-link {
+  color: var(--text-dark) !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 14px;
+  position: relative;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 70%;
+}
+
+/* ================= SEARCH ================= */
+.custom-search {
+  position: relative;
+  width: 220px;
+}
+
+.custom-search input {
+  width: 100%;
+  padding: 10px 44px 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: #f3f4f6;
+  font-size: 0.9rem;
+}
+
+.custom-search svg {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+/* ================= USER ================= */
+.username {
+  background: var(--primary-light);
+  color: var(--text-dark);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.user-icon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.user-icon:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+/* ================= LOGOUT ICON ================= */
+.logout-icon {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: 0.25s ease;
+}
+
+.logout-icon:hover {
+  transform: scale(1.15);
+  color: #000;
+}
+
+/* ================= MODAL BASE (LOGIN / SIGNUP / LOGOUT) ================= */
+.modal-content {
+  border-radius: 22px;
+  border: none;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.35);
+  padding: 20px;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.modal-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+/* ================= AUTH INPUT ================= */
+.auth-input {
+  width: 100%;
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.18);
+}
+
+/* ================= PASSWORD ================= */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper span {
+  position: absolute;
+  right: 14px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.password-wrapper span:hover {
+  color: var(--primary);
+}
+
+/* ================= BUTTON ================= */
+.auth-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.auth-btn:hover {
+  background: var(--primary-hover);
+}
+
+/* ================= FOOTER LINK ================= */
+.auth-footer {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.auth-footer span {
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-footer span:hover {
+  text-decoration: underline;
+}
+
+/* ================= MESSAGE ================= */
+.modal-message {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.modal-message.success {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--success);
+}
+
+.modal-message.error {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+}
+
+/* ================= LOGOUT MODAL ================= */
+.logout-modal .modal-content {
+  padding: 30px;
+  text-align: center;
+}
+
+.logout-modal svg {
+  font-size: 38px;
+}
+
+.logout-modal h5 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+.logout-modal p {
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: #020617;
+    padding: 18px;
+    border-radius: 16px;
+    margin-top: 12px;
+  }
+
+  .custom-search {
+    width: 100%;
+    margin-top: 12px;
+  }
+}

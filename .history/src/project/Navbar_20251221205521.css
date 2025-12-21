@@ -1,6 +1,6 @@
 /* ================= ROOT VARIABLES ================= */
 :root {
-  --primary: #111827;
+  --primary: #111827;        /* black */
   --primary-soft: rgba(17, 24, 39, 0.08);
   --danger: #ef4444;
   --success: #22c55e;
@@ -28,8 +28,9 @@
 /* ================= BRAND ================= */
 .navbar-brand {
   font-size: 1.6rem;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--text-dark) !important;
+  letter-spacing: 0.4px;
 }
 
 /* ================= NAV LINKS ================= */
@@ -39,6 +40,7 @@
   font-size: 0.95rem;
   padding: 8px 14px;
   position: relative;
+  transition: color 0.25s ease;
 }
 
 .navbar-nav .nav-link::after {
@@ -68,8 +70,15 @@
   padding: 10px 42px 10px 16px;
   border-radius: 999px;
   border: 1px solid var(--border-light);
-  background: #e4e5e6;
+  background: #f9fafb;
   font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.custom-search input:focus {
+  outline: none;
+  border-color: var(--text-dark);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .custom-search svg {
@@ -94,6 +103,11 @@
   font-size: 22px;
   color: var(--text-dark);
   cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.user-icon:hover {
+  transform: scale(1.1);
 }
 
 /* ================= LOGOUT ICON ================= */
@@ -101,13 +115,24 @@
   font-size: 24px;
   color: var(--text-dark);
   cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 .logout-icon:hover {
   color: var(--danger);
+  transform: scale(1.1);
 }
 
-/* ================= MODALS ================= */
+/* ================= TOGGLER ================= */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* ================= MODALS (GLOBAL) ================= */
 .modal-content {
   border-radius: 22px;
   border: none;
@@ -121,27 +146,30 @@
 
 .modal-title {
   font-weight: 700;
+  color: var(--text-dark);
 }
 
 .modal-body {
-  padding: 28px 32px 32px;
+  padding: 24px;
 }
 
-/* ================= AUTH INPUT (IMAGE MATCHED) ================= */
+/* ================= AUTH INPUT ================= */
+/* ================= AUTH INPUT (FINAL POLISH) ================= */
 .auth-input {
   width: 100%;
-  height: 56px;
-  border-radius: 16px;
+  height: 56px;                 /* taller like image */
+  border-radius: 16px;          /* pill feel */
   border: 1.5px solid #d1d5db;
   padding: 14px 18px;
   font-size: 1rem;
-  margin-bottom: 18px;
+  margin-bottom: 18px;          /* more vertical spacing */
   background: #ffffff;
 }
 
+
 .auth-input:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: #6366f1;        /* soft indigo */
   box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.25);
 }
 
@@ -152,33 +180,23 @@
 
 .password-wrapper span {
   position: absolute;
-  right: 18px;
-  top: 40%;
+  right: 14px;
+  top: 50%;
   transform: translateY(-50%);
-  font-size: 18px;
   color: var(--text-muted);
   cursor: pointer;
-}
-
-/* ================= NAME ROW (SIGNUP) ================= */
-.name-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-bottom: 18px;
 }
 
 /* ================= AUTH BUTTON ================= */
 .auth-btn {
   width: 100%;
-  height: 56px;
-  border-radius: 16px;
+  height: 48px;
+  border-radius: 14px;
   background: var(--text-dark);
   border: none;
   color: #fff;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-top: 8px;
 }
 
 .auth-btn:hover {
@@ -199,6 +217,26 @@
   cursor: pointer;
 }
 
+/* ================= MESSAGES ================= */
+.modal-message {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.modal-message.success {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--success);
+}
+
+.modal-message.error {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+}
+
 /* ================= LOGOUT MODAL ================= */
 .logout-modal .logout-icon-wrapper {
   width: 64px;
@@ -211,6 +249,15 @@
   justify-content: center;
   font-size: 28px;
   margin: 0 auto 16px;
+}
+
+.logout-modal .logout-title {
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.logout-modal .logout-text {
+  color: var(--text-muted);
 }
 
 .logout-actions {
@@ -249,46 +296,5 @@
     width: 100%;
     margin-top: 12px;
   }
-
-  .name-row {
-    grid-template-columns: 1fr;
-  }
 }
 
-/* ================= AUTH MESSAGES (FINAL POLISH) ================= */
-.modal-message {
-  padding: 14px 18px;
-  border-radius: 14px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 18px;
-  line-height: 1.4;
-  animation: messageFade 0.25s ease-in-out;
-}
-
-/* SUCCESS */
-.modal-message.success {
-  background: rgba(34, 197, 94, 0.14);
-  color: #15803d;
-  border: 1.5px solid rgba(34, 197, 94, 0.35);
-}
-
-/* ERROR */
-.modal-message.error {
-  background: rgba(239, 68, 68, 0.14);
-  color: #b91c1c;
-  border: 1.5px solid rgba(239, 68, 68, 0.35);
-}
-
-/* subtle animation */
-@keyframes messageFade {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}

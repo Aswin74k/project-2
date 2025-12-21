@@ -49,13 +49,14 @@ useEffect(() => {
         setSignupMsg("");
         setFormError("");
 
-       const redirectPath =
+        const redirectPath =
   sessionStorage.getItem("redirectAfterLogin");
 
 if (redirectPath) {
   sessionStorage.removeItem("redirectAfterLogin");
   navigate(redirectPath);
 }
+        }
       }, 1500);
 
       return () => clearTimeout(timer);

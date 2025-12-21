@@ -28,7 +28,7 @@
 /* ================= BRAND ================= */
 .navbar-brand {
   font-size: 1.6rem;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--text-dark) !important;
 }
 
@@ -68,7 +68,7 @@
   padding: 10px 42px 10px 16px;
   border-radius: 999px;
   border: 1px solid var(--border-light);
-  background: #e4e5e6;
+  background: #f9fafb;
   font-size: 0.9rem;
 }
 
@@ -153,7 +153,7 @@
 .password-wrapper span {
   position: absolute;
   right: 18px;
-  top: 40%;
+  top: 60%;
   transform: translateY(-50%);
   font-size: 18px;
   color: var(--text-muted);

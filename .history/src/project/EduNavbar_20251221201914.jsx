@@ -24,45 +24,13 @@ export default function EduNavbar() {
   const [showSignupPwd, setShowSignupPwd] = useState(false);
   const [showConfirmPwd, setShowConfirmPwd] = useState(false);
 
-  /* ================= SCROLL EFFECT ================= */
-/* ================= OPEN LOGIN FROM PROTECTED ROUTE ================= */
-useEffect(() => {
-  const openLogin = () => {
-    setShowSignup(false);
-    setShowLogin(true);
-  };
-
-  window.addEventListener("showLoginModal", openLogin);
-
-  return () => {
-    window.removeEventListener("showLoginModal", openLogin);
-  };
-}, []);
-
-  /* ================= LOGIN REDIRECT ================= */
   useEffect(() => {
-    if (user) {
-      const timer = setTimeout(() => {
-        setShowLogin(false);
-        setShowSignup(false);
-        setLoginMsg("");
-        setSignupMsg("");
-        setFormError("");
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-       const redirectPath =
-  sessionStorage.getItem("redirectAfterLogin");
-
-if (redirectPath) {
-  sessionStorage.removeItem("redirectAfterLogin");
-  navigate(redirectPath);
-}
-      }, 1500);
-
-      return () => clearTimeout(timer);
-    }
-  }, [user, navigate]);
-
-  /* ================= LOGIN ================= */
+  /* LOGIN FORM */
   const {
     register: loginRegister,
     handleSubmit: handleLoginSubmit,
@@ -75,7 +43,7 @@ if (redirectPath) {
     if (res.success) resetLogin();
   };
 
-  /* ================= SIGNUP ================= */
+  /* SIGNUP FORM */
   const {
     register: signupRegister,
     handleSubmit: handleSignupSubmit,
@@ -106,23 +74,24 @@ if (redirectPath) {
     setSignupMsg(res.message);
 
     setTimeout(() => setSignupMsg(""), 3000);
-
     if (res.success) resetSignup();
+  };
+
+  const handleLogoutConfirm = () => {
+    setShowLogout(false);
+    setTimeout(() => logout(), 300);
   };
 
   return (
     <>
-      {/* ================= NAVBAR ================= */}
+      {/* NAVBAR */}
       <Navbar
         fixed="top"
         expand="lg"
         className={scrolled ? "navbar navbar-scrolled" : "navbar"}
       >
         <Container>
-          <Navbar.Brand as={Link} to="/">
-            EduTech
-          </Navbar.Brand>
-
+          <Navbar.Brand as={Link} to="/">EduTech</Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse>
             <Nav className="ms-auto gap-3 align-items-center">
@@ -137,14 +106,13 @@ if (redirectPath) {
 
               {user ? (
                 <>
-                  <span className="username">
-                    Hi, {user.firstName}
-                  </span>
-
-                  <BiLogOut
+                  <span className="username">Hi, {user.firstName}</span>
+                  <button
                     className="logout-icon"
                     onClick={() => setShowLogout(true)}
-                  />
+                  >
+                    <BiLogOut size={22} />
+                  </button>
                 </>
               ) : (
                 <FaUser
@@ -157,36 +125,28 @@ if (redirectPath) {
         </Container>
       </Navbar>
 
-      {/* ================= LOGIN MODAL ================= */}
+      {/* LOGIN MODAL */}
       <Modal show={showLogin} onHide={() => setShowLogin(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          {loginMsg && (
-            <div
-              className={`modal-message ${
-                loginMsg.includes("Welcome") ? "success" : "error"
-              }`}
-            >
-              {loginMsg}
-            </div>
-          )}
+          {loginMsg && <div className="modal-message error">{loginMsg}</div>}
 
           <Form onSubmit={handleLoginSubmit(onLoginSubmit)}>
             <input
               className="auth-input"
               placeholder="Email"
-              {...loginRegister("email", { required: true })}
+              {...loginRegister("email")}
             />
 
             <div className="password-wrapper">
               <input
                 className="auth-input"
                 type={showLoginPwd ? "text" : "password"}
-                placeholder="Password" autoComplete="off"
-                {...loginRegister("password", { required: true })}
+                placeholder="Password"
+                {...loginRegister("password")}
               />
               <span onClick={() => setShowLoginPwd(!showLoginPwd)}>
                 {showLoginPwd ? <FaEyeSlash /> : <FaEye />}
@@ -194,69 +154,46 @@ if (redirectPath) {
             </div>
 
             <button className="auth-btn">Login</button>
-
-            <div className="auth-footer">
-              Don’t have an account?{" "}
-              <span
-                onClick={() => {
-                  setShowLogin(false);
-                  setShowSignup(true);
-                  setLoginMsg("");
-                }}
-              >
-                Sign Up
-              </span>
-            </div>
           </Form>
+
+          {/* ✅ SIGN UP LINK */}
+          <div className="auth-footer">
+            Don’t have an account?{" "}
+            <span
+              onClick={() => {
+                setShowLogin(false);
+                setShowSignup(true);
+              }}
+            >
+              Sign Up
+            </span>
+          </div>
         </Modal.Body>
       </Modal>
 
-      {/* ================= SIGNUP MODAL ================= */}
+      {/* SIGNUP MODAL */}
       <Modal show={showSignup} onHide={() => setShowSignup(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Sign Up</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          {formError && (
-            <div className="modal-message error">{formError}</div>
-          )}
-
-          {signupMsg && (
-            <div
-              className={`modal-message ${
-                signupMsg.includes("exists") ? "error" : "success"
-              }`}
-            >
-              {signupMsg}
-            </div>
-          )}
+          {formError && <div className="modal-message error">{formError}</div>}
+          {signupMsg && <div className="modal-message success">{signupMsg}</div>}
 
           <Form onSubmit={handleSignupSubmit(onSignupSubmit)}>
             <div className="name-row">
-              <input
-                className="auth-input"
-                placeholder="First name"
-                {...signupRegister("firstName")}
-              />
-              <input
-                className="auth-input"
-                placeholder="Last name"
-                {...signupRegister("lastName")}
-              />
+              <input className="auth-input" placeholder="First name" {...signupRegister("firstName")} />
+              <input className="auth-input" placeholder="Last name" {...signupRegister("lastName")} />
             </div>
 
-            <input
-              className="auth-input mt-2"
-              placeholder="Email"
-              {...signupRegister("email")}
-            />
+            <input className="auth-input mt-2" placeholder="Email" {...signupRegister("email")} />
 
             <div className="password-wrapper">
               <input
                 className="auth-input"
                 type={showSignupPwd ? "text" : "password"}
-                placeholder="Password" autoComplete="off"
+                placeholder="Password"
                 {...signupRegister("password")}
               />
               <span onClick={() => setShowSignupPwd(!showSignupPwd)}>
@@ -268,10 +205,9 @@ if (redirectPath) {
               <input
                 className="auth-input"
                 type={showConfirmPwd ? "text" : "password"}
-                placeholder="Confirm password" autoComplete="off"
+                placeholder="Confirm password"
                 {...signupRegister("confirmPassword", {
-                  validate: (v) =>
-                    v === password || "Passwords do not match",
+                  validate: (v) => v === password || "Passwords do not match",
                 })}
               />
               <span onClick={() => setShowConfirmPwd(!showConfirmPwd)}>
@@ -280,57 +216,39 @@ if (redirectPath) {
             </div>
 
             {errors.confirmPassword && (
-              <small className="text-danger">
-                {errors.confirmPassword.message}
-              </small>
+              <small className="text-danger">{errors.confirmPassword.message}</small>
             )}
 
-            <button className="auth-btn mt-3">
-              Create Account
-            </button>
-
-            <div className="auth-footer">
-              Already have an account?{" "}
-              <span
-                onClick={() => {
-                  setShowSignup(false);
-                  setShowLogin(true);
-                }}
-              >
-                Login
-              </span>
-            </div>
+            <button className="auth-btn mt-3">Create Account</button>
           </Form>
+
+          {/* ✅ LOGIN LINK */}
+          <div className="auth-footer">
+            Already have an account?{" "}
+            <span
+              onClick={() => {
+                setShowSignup(false);
+                setShowLogin(true);
+              }}
+            >
+              Login
+            </span>
+          </div>
         </Modal.Body>
       </Modal>
 
-      {/* ================= LOGOUT MODAL ================= */}
-      <Modal
-        show={showLogout}
-        onHide={() => setShowLogout(false)}
-        centered
-      >
-        <Modal.Body className="text-center">
-          <BiLogOut style={{ fontSize: "40px", color: "#090909ff" }} />
-
-          <h4 className="mt-3">Logout</h4>
-          <p>Are you sure you want to logout of your account?</p>
+      {/* LOGOUT MODAL */}
+      <Modal show={showLogout} onHide={() => setShowLogout(false)} centered>
+        <Modal.Body className="text-center p-4">
+          <BiLogOut size={36} className="text-danger" />
+          <h5 className="mt-3">Logout</h5>
+          <p>Are you sure you want to logout?</p>
 
           <div className="d-flex justify-content-center gap-3 mt-4">
-            <button
-              className="logout-cancel"
-              onClick={() => setShowLogout(false)}
-            >
+            <button className="btn btn-outline-secondary" onClick={() => setShowLogout(false)}>
               Cancel
             </button>
-
-            <button
-              className="logout-confirm"
-              onClick={() => {
-                logout();
-                setShowLogout(false);
-              }}
-            >
+            <button className="btn btn-danger" onClick={handleLogoutConfirm}>
               Logout
             </button>
           </div>

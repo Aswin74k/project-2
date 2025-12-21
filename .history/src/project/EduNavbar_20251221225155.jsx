@@ -25,19 +25,11 @@ export default function EduNavbar() {
   const [showConfirmPwd, setShowConfirmPwd] = useState(false);
 
   /* ================= SCROLL EFFECT ================= */
-/* ================= OPEN LOGIN FROM PROTECTED ROUTE ================= */
-useEffect(() => {
-  const openLogin = () => {
-    setShowSignup(false);
-    setShowLogin(true);
-  };
-
-  window.addEventListener("showLoginModal", openLogin);
-
-  return () => {
-    window.removeEventListener("showLoginModal", openLogin);
-  };
-}, []);
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   /* ================= LOGIN REDIRECT ================= */
   useEffect(() => {
@@ -49,13 +41,12 @@ useEffect(() => {
         setSignupMsg("");
         setFormError("");
 
-       const redirectPath =
-  sessionStorage.getItem("redirectAfterLogin");
-
-if (redirectPath) {
-  sessionStorage.removeItem("redirectAfterLogin");
-  navigate(redirectPath);
-}
+        const redirectPath =
+          sessionStorage.getItem("redirectAfterLogin");
+        if (redirectPath) {
+          sessionStorage.removeItem("redirectAfterLogin");
+          navigate(redirectPath);
+        }
       }, 1500);
 
       return () => clearTimeout(timer);
@@ -256,7 +247,7 @@ if (redirectPath) {
               <input
                 className="auth-input"
                 type={showSignupPwd ? "text" : "password"}
-                placeholder="Password" autoComplete="off"
+                placeholder="Password" au\
                 {...signupRegister("password")}
               />
               <span onClick={() => setShowSignupPwd(!showSignupPwd)}>
@@ -268,7 +259,7 @@ if (redirectPath) {
               <input
                 className="auth-input"
                 type={showConfirmPwd ? "text" : "password"}
-                placeholder="Confirm password" autoComplete="off"
+                placeholder="Confirm password"
                 {...signupRegister("confirmPassword", {
                   validate: (v) =>
                     v === password || "Passwords do not match",

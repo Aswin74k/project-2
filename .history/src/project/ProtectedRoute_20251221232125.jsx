@@ -8,6 +8,7 @@ export default function ProtectedRoute({ children }) {
   if (loading) return null;
 
   if (!user) {
+    // ✅ save redirect ONLY if not already on home
     if (location.pathname !== "/") {
       sessionStorage.setItem(
         "redirectAfterLogin",
