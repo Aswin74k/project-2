@@ -76,14 +76,14 @@ export default function Contact() {
             type="text"
             name="name"
             placeholder="Your Name"
-          
+            required
           />
 
           <input
             type="email"
             name="email"
             placeholder="Your Email"
-          
+            required
           />
 
           <textarea

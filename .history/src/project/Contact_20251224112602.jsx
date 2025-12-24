@@ -76,7 +76,7 @@ export default function Contact() {
             type="text"
             name="name"
             placeholder="Your Name"
-          
+            required
           />
 
           <input
