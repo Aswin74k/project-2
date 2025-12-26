@@ -1,0 +1,150 @@
+/* ================= PAGE LAYOUT ================= */
+
+.enroll-page {
+  padding: 100px 20px 60px; /* like Contact page */
+  background: linear-gradient(135deg, #f3f6fd, #e9efff);
+  font-family: "Poppins", sans-serif;
+}
+
+
+.enroll-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  padding: 40px 32px;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  margin: 0 auto; /* center horizontally */
+  animation: slideUp 0.6s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.enroll-container h2 {
+  text-align: center;
+  color: #0d6efd;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+
+.success-msg {
+  background: #e7f6ed;
+  color: #0f5132;
+  padding: 12px 14px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.error-msg {
+  background: #fdecea;
+  color: #842029;
+  padding: 12px 14px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #d1d9f0;
+  transition: all 0.25s ease;
+  background: #fff;
+}
+
+.form-group input:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.field-error {
+  font-size: 13px;
+  margin-top: 5px;
+  color: #dc3545;
+}
+
+
+.enroll-actions {
+  margin-top: 28px;
+}
+
+.enroll-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0d6efd, #084cdf);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enroll-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.35);
+}
+
+.enroll-btn:disabled {
+  background: #a6c3ff;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.back-btn {
+  margin-top: 14px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0d6efd;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+  .enroll-container {
+    padding: 30px 22px;
+  }
+
+  .enroll-container h2 {
+    font-size: 24px;
+  }
+}

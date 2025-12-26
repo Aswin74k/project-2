@@ -1,0 +1,112 @@
+.about-page {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #0f172a;
+}
+
+/* INTRO */
+.about-intro {
+  padding: 80px 20px 60px;
+  text-align: center;
+  background: #f8fafc;
+}
+
+.about-intro h1 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.about-intro p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* SECTION */
+.about-section {
+  padding: 80px 0;
+}
+
+.about-section.light {
+  background: #f8fafc;
+}
+
+.about-section h2 {
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.about-section p {
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* HIGHLIGHT BOX */
+.about-highlight {
+  display: grid;
+  gap: 20px;
+}
+
+.about-highlight div {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+}
+
+.about-highlight svg {
+  font-size: 28px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.about-highlight h4 {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* VALUES */
+.about-values {
+  background: #0f172a;
+  padding: 90px 0;
+  color: #ffffff;
+}
+
+.value-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 30px 24px;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.value-card svg {
+  font-size: 34px;
+  color: #38bdf8;
+  margin-bottom: 14px;
+}
+
+.value-card h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+/* WHY LIST */
+.why-list p {
+  font-size: 1rem;
+  color: #334155;
+  margin-bottom: 10px;
+}

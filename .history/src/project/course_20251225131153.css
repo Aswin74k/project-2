@@ -1,0 +1,163 @@
+.course-container {
+  font-family: "Poppins", sans-serif;
+  background: #f4f7ff;
+}
+
+/* HERO */
+.course-header {
+  background: linear-gradient(135deg, #0d6efd, #002f8f);
+  padding: 90px 20px;
+  border-radius: 0 0 40px 40px;
+  color: #fff;
+}
+
+.course-hero {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.course-title {
+  font-size: 52px;
+  font-weight: 800;
+}
+
+.course-subtitle {
+  font-size: 20px;
+  margin: 16px auto;
+  max-width: 700px;
+}
+
+.course-trust {
+  font-size: 15px;
+  opacity: 0.9;
+  margin-bottom: 35px;
+}
+
+.course-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.course-stats div {
+  background: rgba(255,255,255,0.15);
+  padding: 18px 26px;
+  border-radius: 16px;
+}
+
+/* CONTENT */
+.course-content {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.info-box,
+.syllabus-box,
+.career-box {
+  background: #fff;
+  padding: 32px;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.info-box h3,
+.syllabus-box h3,
+.career-box h3 {
+  color: #0d6efd;
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+.why-course {
+  background: linear-gradient(135deg, #eef4ff, #fff);
+  padding: 32px;
+  border-radius: 22px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 16px;
+}
+
+.why-grid div {
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.syllabus-box li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 12px;
+}
+
+.syllabus-box li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #0d6efd;
+}
+
+.career-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.career-tags span {
+  background: #eef4ff;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* ENROLL */
+.enroll-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+  max-width: 480px;
+}
+
+.enroll-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.enroll-main-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  background: linear-gradient(135deg, #0d6efd, #0047c2);
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.enroll-main-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(13,110,253,0.4);
+}
+
+@media (min-width: 992px) {
+  .enroll-card {
+    position: sticky;
+    top: 120px;
+  }
+}
+
+.not-found {
+  text-align: center;
+  margin: 100px 0;
+}

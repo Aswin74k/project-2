@@ -1,0 +1,94 @@
+.about-page {
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* HERO */
+.about-hero {
+  background: linear-gradient(
+      rgba(13, 27, 42, 0.85),
+      rgba(13, 27, 42, 0.85)
+    ),
+    url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+}
+
+.about-hero p {
+  max-width: 700px;
+  margin: 20px auto 0;
+  font-size: 1.1rem;
+  color: #e5e7eb;
+}
+
+/* SECTION */
+.about-section {
+  padding: 80px 0;
+}
+
+.about-section.light {
+  background: #f8fafc;
+}
+
+.about-section h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-section p {
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* IMAGE */
+.about-image {
+  height: 320px;
+  border-radius: 18px;
+  background-image: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* VALUES */
+.about-values {
+  background: #0f172a;
+  padding: 80px 0;
+  color: #fff;
+}
+
+.value-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 30px 25px;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+}
+
+.value-card svg {
+  font-size: 34px;
+  color: #4da3ff;
+  margin-bottom: 15px;
+}
+
+.value-card h4 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}

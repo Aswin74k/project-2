@@ -1,0 +1,196 @@
+.about-page {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #0f172a;
+}
+
+/* TITLE */
+.about-title {
+  padding: 70px 20px 40px;
+  text-align: center;
+}
+
+.about-title h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+}
+
+.about-title p {
+  max-width: 720px;
+  margin: 14px auto 0;
+  color: #475569;
+  font-size: 1.05rem;
+}
+
+/* SECTIONS */
+.about-section {
+  padding: 60px 0;
+}
+
+.about-section.light {
+  background: #f8fafc;
+}
+
+.section-heading {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* INTRO */
+.about-intro {
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #334155;
+}
+
+/* HIGHLIGHTS */
+.about-highlights {
+  padding: 60px 0;
+  background: #0f172a;
+}
+
+.highlight-card {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 26px 18px;
+  border-radius: 16px;
+  text-align: center;
+  height: 100%;
+}
+
+.highlight-card svg {
+  font-size: 30px;
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.highlight-card h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.highlight-card p {
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+/* TIMELINE */
+.timeline {
+  max-width: 700px;
+  margin: auto;
+  display: grid;
+  gap: 16px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: #ffffff;
+  padding: 16px 18px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.timeline-item span {
+  min-width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* WHY */
+/* WHY TECHMENTOR */
+.why-techmentor {
+  padding: 70px 0;
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 650px;
+  margin: 10px auto 0;
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* CARD */
+.why-card {
+  position: relative;
+  background: #ffffff;
+  padding: 32px 24px;
+  border-radius: 18px;
+  height: 100%;
+  border: 1px solid #e5e7eb;
+  transition: all 0.35s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* NUMBER BADGE */
+.why-card span {
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: #ffffff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* TEXT */
+.why-card h4 {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.why-card p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .why-techmentor {
+    padding: 55px 16px;
+  }
+
+  .why-card {
+    padding: 28px 20px;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-title {
+    padding: 60px 16px 30px;
+  }
+
+  .about-section {
+    padding: 50px 0;
+  }
+
+  .timeline-item {
+    font-size: 0.95rem;
+  }
+}

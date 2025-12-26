@@ -1,0 +1,178 @@
+/* ===== PAGE ===== */
+.enroll-page {
+  height: 90vh;              /* full screen */
+  width: 100vw;
+  overflow: hidden;           /* 🚫 disable scrolling */
+  background: radial-gradient(circle at top, #eef3ff, #e6edff);
+  font-family: "Poppins", sans-serif;
+
+  display: flex;
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+}
+/* ===== CARD ===== */
+.enroll-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  padding: 42px 36px;
+  border-radius: 22px;
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.12),
+    0 4px 12px rgba(13, 110, 253, 0.15);
+  animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== HEADING ===== */
+.enroll-container h2 {
+  text-align: center;
+  color: #0d6efd;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  letter-spacing: 0.3px;
+}
+
+/* ===== STATUS MESSAGES ===== */
+.success-msg,
+.error-msg {
+  padding: 14px 16px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 22px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.success-msg {
+  background: linear-gradient(135deg, #e7f6ed, #d1f0df);
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+.error-msg {
+  background: linear-gradient(135deg, #fdecea, #f8d7da);
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+
+/* ===== FORM ===== */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* INPUT */
+.form-group input {
+  width: 100%;
+  padding: 13px 15px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1.5px solid #d6def6;
+  background: #fff;
+  transition: all 0.25s ease;
+}
+
+.form-group input::placeholder {
+  color: #9aa4bf;
+}
+
+/* FOCUS */
+.form-group input:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.18);
+}
+
+/* ERROR STATE */
+.form-group input.error {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
+}
+
+/* FIELD ERROR TEXT */
+.field-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #dc3545;
+}
+
+/* ===== ACTIONS ===== */
+.enroll-actions {
+  margin-top: 32px;
+}
+
+/* PRIMARY BUTTON */
+.enroll-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #0d6efd, #0047c2);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enroll-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(13, 110, 253, 0.45);
+}
+
+.enroll-btn:disabled {
+  background: linear-gradient(135deg, #9bbcff, #7fa3f5);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* BACK LINK */
+.back-btn {
+  display: block;
+  margin: 16px auto 0;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d6efd;
+  cursor: pointer;
+  text-align: center;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .enroll-container {
+    padding: 32px 24px;
+    border-radius: 18px;
+  }
+
+  .enroll-container h2 {
+    font-size: 26px;
+  }
+}

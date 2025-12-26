@@ -1,0 +1,184 @@
+/* ===== PAGE LAYOUT ===== */
+.enroll-page {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #eef3ff, #e6edff);
+  font-family: "Poppins", sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== CARD ===== */
+.enroll-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 520px;
+  padding: 42px 38px;
+  border-radius: 22px;
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.12),
+    0 6px 18px rgba(13, 110, 253, 0.15);
+
+  animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== TITLE ===== */
+.enroll-container h2 {
+  text-align: center;
+  color: #0d6efd;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 26px;
+}
+
+/* ===== STATUS MESSAGES ===== */
+.success-msg,
+.error-msg {
+  padding: 14px 16px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 22px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.success-msg {
+  background: #e7f6ed;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+.error-msg {
+  background: #fdecea;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+
+/* ===== FORM GROUP ===== */
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* LABEL */
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* INPUT WRAPPER (IMPORTANT FIX) */
+.input-wrapper {
+  position: relative;
+}
+
+/* INPUT */
+.form-group input {
+  width: 100%;
+  padding: 13px 14px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1.5px solid #d6def6;
+  background: #fff;
+  transition: all 0.25s ease;
+}
+
+/* FOCUS */
+.form-group input:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.18);
+}
+
+/* ERROR INPUT */
+.form-group input.error {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
+}
+
+/* ERROR ICON (FIXED POSITION) */
+.error-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #dc3545;
+  pointer-events: none;
+}
+
+/* ERROR TEXT (CLEAN) */
+.field-error {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #dc3545;
+  line-height: 1.3;
+}
+
+/* ===== ACTIONS ===== */
+.enroll-actions {
+  margin-top: 28px;
+}
+
+/* PRIMARY BUTTON */
+.enroll-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #0d6efd, #0047c2);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enroll-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(13, 110, 253, 0.45);
+}
+
+/* BACK BUTTON */
+.back-btn {
+  display: block;
+  margin: 16px auto 0;
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d6efd;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .enroll-container {
+    padding: 30px 22px;
+  }
+
+  .enroll-container h2 {
+    font-size: 24px;
+  }
+}
