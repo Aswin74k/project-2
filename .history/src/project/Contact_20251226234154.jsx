@@ -14,7 +14,7 @@ export default function Contact() {
     reset,
     formState: { errors, isSubmitting },
   } = useForm({
-    mode: "onBlur", 
+    mode: "onBlur", // better UX
   });
 
   const onSubmit = async (data) => {
@@ -51,7 +51,7 @@ export default function Contact() {
       </p>
 
       <div className="contact-container">
-        
+        {/* LEFT INFO */}
         <div className="contact-info">
           <div className="info-box">
             <FaEnvelope />

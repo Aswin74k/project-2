@@ -8,7 +8,7 @@ export default function Profile() {
   const [edit, setEdit] = useState(false);
   const [profileData, setProfileData] = useState(user);
   const [preview, setPreview] = useState(user.profilePic || null);
-  const [toast, setToast] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const handleImage = (e) => {
     const file = e.target.files[0];
@@ -25,56 +25,49 @@ export default function Profile() {
   const handleSave = () => {
     updateUser(profileData);
     setEdit(false);
-    setToast(true);
-    setTimeout(() => setToast(false), 2500);
+
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
   };
 
   return (
     <div className="profile-container">
-      {toast && <div className="toast">✅ Profile updated</div>}
+      {showToast && <div className="toast">✅ Profile updated successfully</div>}
 
       <div className="profile-card">
-        {/* Profile Image */}
         <div className="profile-pic">
-          <label htmlFor="upload">
-            <img src={preview || "/default-user.png"} alt="profile" />
+          <label htmlFor="profileUpload">
+            <img
+              src={preview || "/default-user.png"}
+              alt="profile"
+              className="profile-image"
+            />
             {edit && <span className="edit-overlay">Change</span>}
           </label>
 
           {edit && (
             <input
-              id="upload"
+              id="profileUpload"
               type="file"
               accept="image/*"
-              hidden
               onChange={handleImage}
+              hidden
             />
           )}
         </div>
 
-        {/* Info */}
         <div className="profile-info">
-          <div>
-            <label>First Name</label>
-            <input
-              disabled={!edit}
-              value={profileData.firstName}
-              onChange={(e) =>
-                setProfileData({ ...profileData, firstName: e.target.value })
-              }
-            />
-          </div>
+          <label>First Name</label>
+          <input
+            value={profileData.firstName}
+            disabled={!edit}
+            onChange={(e) =>
+              setProfileData({ ...profileData, firstName: e.target.value })
+            }
+          />
 
-          <div>
-            <label>Email</label>
-            <input
-              disabled={!edit}
-              value={profileData.email}
-              onChange={(e) =>
-                setProfileData({ ...profileData, email: e.target.value })
-              }
-            />
-          </div>
+          <label>Email</label>
+          <input value={profileData.email} readOnly />
         </div>
 
         {!edit ? (
@@ -89,4 +82,4 @@ export default function Profile() {
       </div>
     </div>
   );
-}   
+}

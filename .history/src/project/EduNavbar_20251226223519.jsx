@@ -72,7 +72,7 @@
       if (res.success) resetLogin();
     };
 
-    // signup
+    signup
 
     const {
       register: signupRegister,

@@ -144,7 +144,7 @@
                     />
                   </>
                 ) : (
-                  <FaUser
+                  <CiUser
                     className="user-icon"
                     onClick={() => setShowLogin(true)}
                   />

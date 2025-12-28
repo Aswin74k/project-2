@@ -14,7 +14,7 @@ export default function Contact() {
     reset,
     formState: { errors, isSubmitting },
   } = useForm({
-    mode: "onBlur", 
+    mode: "onBlur", // better UX
   });
 
   const onSubmit = async (data) => {
@@ -51,7 +51,7 @@ export default function Contact() {
       </p>
 
       <div className="contact-container">
-        
+        {/* LEFT INFO */}
         <div className="contact-info">
           <div className="info-box">
             <FaEnvelope />
@@ -97,7 +97,7 @@ export default function Contact() {
             <span className="field-error">{errors.name.message}</span>
           )}
 
-          
+          {/* EMAIL */}
           <input
             type="email"
             placeholder="Your Email"
@@ -114,6 +114,7 @@ export default function Contact() {
             <span className="field-error">{errors.email.message}</span>
           )}
 
+          {/* MESSAGE */}
           <textarea
             rows="5"
             placeholder="Your Message"
@@ -130,7 +131,7 @@ export default function Contact() {
             <span className="field-error">{errors.message.message}</span>
           )}
 
-      
+          {/* BUTTON */}
           <button type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Send Message"}
           </button>

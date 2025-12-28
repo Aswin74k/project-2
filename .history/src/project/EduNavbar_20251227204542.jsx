@@ -1,6 +1,8 @@
   import React, { useState, useEffect } from "react";
   import { Navbar, Nav, Container, Form, Modal } from "react-bootstrap";
-  import { FaSearch, FaUser, FaEye, FaEyeSlash } from "react-icons/fa";
+  import { FaSearch, FaUser, FaEye, FaEyeSlash } from "react-icons/
+  
+  i";
   import { BiLogOut } from "react-icons/bi";
   import { useForm } from "react-hook-form";
   import { Link, useNavigate } from "react-router-dom";
@@ -144,7 +146,7 @@
                     />
                   </>
                 ) : (
-                  <FaUser
+                  <CiUser
                     className="user-icon"
                     onClick={() => setShowLogin(true)}
                   />

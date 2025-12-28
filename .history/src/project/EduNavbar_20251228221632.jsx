@@ -134,9 +134,12 @@
 
                 {user ? (
                   <>
-                    <span className="username">
-                      Hi, {user.firstName}
-                    </span>
+                    <span
+  className="username profile-link"
+  onClick={() => navigate("/profile")}
+>
+  Hi, {user.firstName}
+</span>
 
                     <BiLogOut
                       className="logout-icon"

@@ -14,7 +14,7 @@ export default function Contact() {
     reset,
     formState: { errors, isSubmitting },
   } = useForm({
-    mode: "onBlur", 
+    mode: "onBlur", // better UX
   });
 
   const onSubmit = async (data) => {
