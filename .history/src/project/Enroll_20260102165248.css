@@ -1,0 +1,167 @@
+.enroll-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef3ff, #e6edff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.enroll-wrapper {
+  display: flex;
+  max-width: 950px;
+  width: 100%;
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* LEFT */
+.enroll-info {
+  flex: 1;
+  background: linear-gradient(135deg, #0d6efd, #003cb3);
+  color: white;
+  padding: 40px;
+}
+
+.enroll-info h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 12px 0 22px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.steps {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.steps span {
+  opacity: 0.6;
+}
+
+.steps .active {
+  opacity: 1;
+  font-weight: 700;
+}
+
+/* RIGHT */
+.enroll-container {
+  flex: 1;
+  padding: 40px;
+}
+
+.enroll-container h3 {
+  text-align: center;
+  font-size: 24px;
+  color: #0d6efd;
+  margin-bottom: 18px;
+}
+
+.success-msg,
+.error-msg {
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.success-msg {
+  background: #e7f6ed;
+  color: #0f5132;
+}
+
+.error-msg {
+  background: #fdecea;
+  color: #842029;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid #d6def6;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0d6efd;
+}
+
+.form-group input.error {
+  border-color: #dc3545;
+}
+
+.field-error {
+  font-size: 12px;
+  color: #dc3545;
+  margin-top: 4px;
+}
+
+.enroll-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  background: linear-gradient(135deg, #0d6efd, #003cb3);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.enroll-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(13, 110, 253, 0.4);
+}
+
+.back-btn {
+  margin-top: 12px;
+  background: none;
+  border: none;
+  color: #0d6efd;
+  font-size: 13px;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+.secure-text {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* RESPONSIVE */
+@media (

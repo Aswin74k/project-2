@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+.pay-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef3ff, #dbe6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* CARD */
+.pay-card {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* TITLE */
+.pay-title {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+/* COURSE INFO */
+.pay-course {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f5ff;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* PAYMENT METHODS */
+.pay-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pay-method {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #f9f9ff;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* FORM */
+.pay-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pay-input {
+  width: 100%;
+  padding: 13px;
+  border-radius: 12px;
+  border: 1.5px solid #d6def6;
+  font-size: 14px;
+}
+
+.pay-input:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.18);
+}
+
+.pay-row {
+  display: flex;
+  gap: 12px;
+}
+
+/* BUTTON */
+.pay-btn {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #0d6efd, #0047c2);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pay-btn:disabled {
+  opacity: 0.7;
+}
+
+/* SUCCESS POPUP */
+.pay-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pay-popup {
+  background: #fff;
+  padding: 28px;
+  border-radius: 18px;
+  text-align: center;
+  animation: pop 0.3s ease;
+}
+
+.pay-popup svg {
+  font-size: 40px;
+  color: #16a34a;
+  margin-bottom: 10px;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

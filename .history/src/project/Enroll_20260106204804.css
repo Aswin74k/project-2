@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* ✅ PAGE NEVER SCROLL */
+  font-family: "Poppins", sans-serif;
+}
+
+/* PAGE */
+.enroll-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #eef3ff, #e6edff);
+  padding: 16px;
+}
+
+/* CARD */
+.enroll-layout {
+  width: 100%;
+  max-width: 1050px;
+  height: 600px;               /* ✅ FIXED HEIGHT */
+  display: flex;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+/* LEFT */
+.enroll-info {
+  flex: 1;
+  background: linear-gradient(135deg, #0d6efd, #003fa3);
+  color: #fff;
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.enroll-info h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.course-desc {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.duration-box {
+  margin-top: 22px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.secure-note {
+  margin-top: 26px;
+  font-size: 13px;
+}
+
+/* RIGHT */
+.enroll-container {
+  flex: 1;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TITLE */
+.enroll-container h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* ERROR HOLDER (NO JUMP) */
+.top-error-holder {
+  min-height: 22px;
+  margin-bottom: 8px;
+}
+
+.top-error-msg {
+  text-align: center;
+  font-size: 14px;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* FORM */
+
+
+.form-group {
+  margin-bottom: 17px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 12px;
+  border: 1.5px solid #d6def6;
+}
+
+input.error {
+  border-color: #dc2626;
+}
+
+/* FIELD ERROR */
+.field-error {
+  display: block;
+  min-height: 16px;
+  font-size: 12px;
+  margin-top: 4px;
+  color: #dc2626;
+}
+
+/* BUTTONS */
+.enroll-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #0d6efd, #0047c2);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.back-btn {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #0d6efd;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #fff;
+  width: 340px;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  animation: modalSlide 0.3s ease;
+}
+
+.modal-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: auto auto 12px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-icon {
+  color: #fff;
+  font-size: 32px;
+}
+
+@keyframes modalSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  html,
+  body {
+    overflow: auto;
+  }
+
+  .enroll-layout {
+    height: auto;
+    flex-direction: column;
+  }
+
+  form {
+    overflow: visible;
+  }
+}

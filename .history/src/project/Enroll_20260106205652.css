@@ -1,0 +1,253 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden; /* ❌ NO PAGE SCROLL */
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===============================
+   PAGE
+================================ */
+.enroll-page {
+  height: 100vh; /* FIXED VIEWPORT */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #eef3ff, #e6edff);
+  padding: 16px;
+}
+
+/* ===============================
+   MAIN CARD
+================================ */
+.enroll-layout {
+  width: 100%;
+  max-width: 1050px;
+  height: 600px; /* 🔑 FIX HEIGHT = NO SCROLL */
+  display: flex;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* ===============================
+   LEFT PANEL
+================================ */
+.enroll-info {
+  flex: 1;
+  background: linear-gradient(135deg, #0d6efd, #003fa3);
+  color: #fff;
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.enroll-info h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.course-desc {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.duration-box {
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 14px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.secure-note {
+  margin-top: 26px;
+  font-size: 13px;
+}
+
+/* ===============================
+   RIGHT PANEL
+================================ */
+.enroll-container {
+  flex: 1;
+  background: #fff;
+  padding: 36px 40px;
+  height: 100%;
+  overflow: hidden; /* ❌ NO FORM SCROLL */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.enroll-container h3 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* ===============================
+   TOP ERROR (NO JUMP)
+================================ */
+.top-error-holder {
+  min-height: 22px;
+  margin-bottom: 6px;
+}
+
+.top-error-msg {
+  text-align: center;
+  font-size: 14px;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ===============================
+   FORM
+================================ */
+form {
+  width: 100%;
+}
+
+/* FIELD GROUP */
+.form-group {
+  margin-bottom: 14px;
+}
+
+/* LABEL */
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* INPUT */
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 5px;
+  border-radius: 12px;
+  border: 1.5px solid #d6def6;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #0d6efd;
+}
+
+/* ERROR INPUT */
+input.error {
+  border-color: #dc2626;
+}
+
+/* FIELD ERROR – FIXED SPACE */
+.field-error {
+  display: block;
+  min-height: 14px; /* 🔑 PREVENT LAYOUT SHIFT */
+  margin-top: 3px;
+  font-size: 12px;
+  color: #dc2626;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.enroll-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 13px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #0d6efd, #0047c2);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.back-btn {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #0d6efd;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ===============================
+   MODAL
+================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #fff;
+  width: 360px;
+  padding: 32px;
+  border-radius: 20px;
+  text-align: center;
+  animation: modalSlide 0.3s ease;
+}
+
+.modal-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-icon {
+  color: #fff;
+  font-size: 32px;
+}
+
+@keyframes modalSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===============================
+   RESPONSIVE (MOBILE ONLY)
+================================ */
+@media (max-width: 900px) {
+  html,
+  body {
+    overflow: auto; /* MOBILE scroll allowed */
+  }
+
+  .enroll-layout {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .enroll-container {
+    height: auto;
+    overflow: visible;
+  }
+}

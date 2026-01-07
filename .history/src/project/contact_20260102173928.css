@@ -1,0 +1,136 @@
+.contact-page {
+  padding: 100px 20px 60px;
+  background: #f9f9ff;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.contact-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* LEFT INFO */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.info-box {
+  display: flex;
+  gap: 15px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.info-box svg {
+  font-size: 22px;
+}
+
+/* FORM */
+.contact-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #5a4bff;
+  outline: none;
+}
+
+.contact-form input.error,
+.contact-form textarea.error {
+  border-color: #dc2626;
+}
+
+.field-error {
+  font-size: 12.5px;
+  color: #dc2626;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.field-error::before {
+  content: "⚠";
+}
+
+.contact-form button {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: #5a4bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-form button:disabled {
+  opacity: 0.7;
+}
+
+.status-msg {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.status-msg.success {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.status-msg.error {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}

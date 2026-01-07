@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+.enroll-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #eef3ff, #e6edff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.enroll-layout {
+  max-width: 1050px;
+  width: 100%;
+  display: flex;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+.enroll-info {
+  flex: 1;
+  background: linear-gradient(135deg, #0d6efd, #003fa3);
+  color: #fff;
+  padding: 46px;
+}
+
+.enroll-container {
+  flex: 1;
+  background: #fff;
+  padding: 42px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px;
+  border-radius: 12px;
+  border: 1.5px solid #d6def6;
+}
+
+.field-error {
+  min-height: 14px;
+  font-size: 12px;
+  color: #dc3545;
+}
+
+.enroll-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #0d6efd;
+  color: #fff;
+  font-weight: 600;
+}
+
+.back-btn {
+  margin-top: 12px;
+  background: none;
+  border: none;
+  color: #0d6efd;
+  width: 100%;
+}
+
+/* PAYMENT MODAL */
+.pay-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pay-modal {
+  background: #fff;
+  padding: 28px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.pay-course {
+  display: flex;
+  justify-content: space-between;
+  margin: 14px 0;
+  font-weight: 600;
+}
+
+.pay-methods {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 14px;
+  background: #0d6efd;
+  color: #fff;
+  border-radius: 14px;
+  border: none;
+}
+
+.cancel-btn {
+  margin-top: 10px;
+  width: 100%;
+  background: none;
+  border: none;
+}
+
+/* SUCCESS */
+.pay-success {
+  background: #fff;
+  padding: 28px;
+  border-radius: 18px;
+  text-align: center;
+}

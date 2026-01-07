@@ -1,0 +1,77 @@
+.profile-sidebar {
+  width: 320px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  background: #000;
+  color: #fff;
+  font-size: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.edit-btn {
+  margin-top: 12px;
+  background: transparent;
+  border: 1px solid #000;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.edit-section {
+  margin-top: 20px;
+}
+
+.edit-section input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.save-btn {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+.profile-info {
+  margin-top: 25px;
+}
+
+.info-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.info-card.premium {
+  background: linear-gradient(135deg, #000, #444);
+  color: #fff;
+}
+
+.course-list {
+  padding-left: 18px;
+  margin-bottom: 15px;
+}

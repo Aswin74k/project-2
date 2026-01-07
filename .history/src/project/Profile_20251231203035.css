@@ -1,0 +1,81 @@
+.profile-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9fafb;
+}
+
+.profile-card {
+  width: 420px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.profile-card h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.profile-field {
+  margin-bottom: 18px;
+}
+
+.profile-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.profile-field input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.profile-field input:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+/* Buttons */
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #2563eb;
+  color: #fff;
+}
+
+.save-btn {
+  background: #16a34a;
+  color: #fff;
+}
+
+.cancel-btn {
+  margin-top: 10px;
+  background: #6b7280;
+  color: #fff;
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

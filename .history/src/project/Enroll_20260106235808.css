@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden; /* ✅ stop vertical scroll */
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= PAGE ================= */
+.enroll-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #eef3ff, #e6edff);
+  padding: 20px;
+}
+
+/* ================= CARD ================= */
+.enroll-layout {
+  width: 100%;
+  max-width: 1050px;
+  height: 620px; /* 🔥 FIXED HEIGHT */
+  display: flex;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= LEFT ================= */
+.enroll-info {
+  flex: 1;
+  background: linear-gradient(135deg, #0d6efd, #003fa3);
+  color: #fff;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.enroll-info h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.course-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.duration-box {
+  margin-top: 26px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-size: 14px;
+}
+
+.secure-note {
+  margin-top: 32px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* ================= RIGHT ================= */
+.enroll-container {
+  flex: 1;
+  background: #fff;
+  padding: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.enroll-container h3 {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+/* ================= TOP ERROR ================= */
+.top-error-holder {
+  height: 22px; /* 🔥 reserve space */
+  margin-bottom: 8px;
+}
+
+.top-error-msg {
+  font-size: 13px;
+  text-align: center;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* ================= FORM ================= */
+form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px 14px;
+  margin-top: 6px;
+  border-radius: 12px;
+  border: 1.5px solid #d6def6;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0d6efd;
+}
+
+input.error {
+  border-color: #dc2626;
+}
+
+/* ================= FIELD ERROR ================= */
+.field-error {
+  display: block;
+  height: 16px; /* 🔥 no layout shift */
+  font-size: 12px;
+  margin-top: 4px;
+  color: #dc2626;
+}
+
+/* ================= BUTTONS ================= */
+.enroll-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #0d6efd, #0047c2);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.enroll-btn:hover {
+  opacity: 0.95;
+}
+
+.back-btn {
+  display: block;
+  margin-top: 12px;
+  background: none;
+  border: none;
+  color: #0d6efd;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ================= MODAL ================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #fff;
+  width: 360px;
+  padding: 34px;
+  border-radius: 22px;
+  text-align: center;
+  animation: modalSlide 0.3s ease;
+}
+
+.modal-icon-wrapper {
+  width: 72px;
+  height: 72px;
+  margin: auto;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-icon {
+  color: #fff;
+  font-size: 32px;
+}
+
+@keyframes modalSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  body {
+    overflow: auto;
+  }
+
+  .enroll-layout {
+    flex-direction: column;
+    height: auto;
+  }
+}

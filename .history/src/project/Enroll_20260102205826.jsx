@@ -1,0 +1,148 @@
+import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate, useLocation } from "react-router-dom";
+import "./Enroll.css";
+
+export default function Enroll() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const course = location.state?.course;
+
+  const [showPopup, setShowPopup] = useState(false);
+  const [submitMsg, setSubmitMsg] = useState("");
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({ mode: "onSubmit" });
+
+  const onSubmit = (data) => {
+    setSubmitMsg("Enrollment successful! We will contact you shortly.");
+    setShowPopup(true);
+    reset();
+  };
+
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      setSubmitMsg("");
+    }
+  }, [errors]);
+
+  return (
+    <>
+      <div className="enroll-page">
+        <div className="enroll-layout">
+
+          {/* LEFT */}
+          <div className="enroll-info">
+            <h2>{course?.title || "Course Enrollment"}</h2>
+            <p className="course-desc">
+              Learn with hands-on projects, expert mentorship and job-ready skills.
+            </p>
+
+            <div className="duration-box">
+              <span>⏱ Duration</span>
+              <strong>{course?.duration || "5 Months"}</strong>
+            </div>
+
+            <p className="secure-note">
+              🔒 Secure enrollment • Certificate included
+            </p>
+          </div>
+
+          {/* RIGHT */}
+          <div className="enroll-container">
+            <h3>Enroll Now</h3>
+
+            <form onSubmit={handleSubmit(onSubmit)} noValidate>
+
+              {/* NAME */}
+              <div className="form-group">
+                <label>Name</label>
+                <input
+                  className={errors.name ? "error" : ""}
+                  {...register("name", {
+                    required: "Please fill this field",
+                  })}
+                />
+                <span className="field-error">{errors.name?.message || ""}</span>
+              </div>
+
+              {/* EMAIL */}
+              <div className="form-group">
+                <label>Email</label>
+                <input
+                  className={errors.email ? "error" : ""}
+                  {...register("email", {
+                    required: "Please fill this field",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Invalid email",
+                    },
+                  })}
+                />
+                <span className="field-error">{errors.email?.message || ""}</span>
+              </div>
+
+              {/* PHONE */}
+              <div className="form-group">
+                <label>Phone</label>
+                <input
+                  className={errors.phone ? "error" : ""}
+                  {...register("phone", {
+                    required: "Please fill this field",
+                    pattern: {
+                      value: /^[0-9]{10}$/,
+                      message: "Must be 10 digits",
+                    },
+                  })}
+                />
+                <span className="field-error">{errors.phone?.message || ""}</span>
+              </div>
+
+              {/* AGE */}
+              <div className="form-group">
+                <label>Age</label>
+                <input
+                  type="number"
+                  className={errors.age ? "error" : ""}
+                  {...register("age", {
+                    required: "Please fill this field",
+                    min: { value: 16, message: "Min age is 16" },
+                    max: { value: 60, message: "Max age is 60" },
+                  })}
+                />
+                <span className="field-error">{errors.age?.message || ""}</span>
+              </div>
+
+              <button type="submit" className="enroll-btn">
+                Confirm Enrollment
+              </button>
+
+              <button
+                type="button"
+                className="back-btn"
+                onClick={() => navigate(-1)}
+              >
+                ← Back to Course
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* ✅ SUCCESS POPUP */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-box">
+            <h3>Enrollment Successful 🎉</h3>
+            <p>{submitMsg}</p>
+            <button onClick={() => setShowPopup(false)}>OK</button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
