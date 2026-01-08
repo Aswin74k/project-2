@@ -1,0 +1,238 @@
+/* ===============================
+   CONTACT PAGE – MATCHED CSS
+================================ */
+
+.contact-page {
+  width: 100%;
+  padding: 30px 20px;
+  background: linear-gradient(180deg, #f7f9ff, #eef1ff);
+  box-sizing: border-box;
+}
+
+/* ---------- HEADER ---------- */
+
+.contact-header {
+  max-width: 900px;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+
+.contact-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.contact-header p {
+  font-size: 15px;
+  color: #4b5563;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* ---------- MAIN GRID ---------- */
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+}
+
+/* ===============================
+   LEFT – CONTACT INFO
+================================ */
+
+.contact-info {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.contact-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.info-desc {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 18px;
+}
+
+/* Info Box */
+.info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+  margin-bottom: 14px;
+}
+
+.info-box svg {
+  font-size: 20px;
+  color: #2563eb;
+  margin-top: 3px;
+}
+
+.info-box h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #111827;
+}
+
+.info-box p {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+/* Trust note */
+.trust-note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ===============================
+   RIGHT – CONTACT FORM
+================================ */
+
+.contact-form {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.contact-form h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 18px;
+}
+
+/* ---------- FORM ---------- */
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+}
+
+/* Error input */
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #dc2626;
+}
+
+/* Error text */
+.field-error {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #dc2626;
+}
+
+/* ---------- STATUS MESSAGE ---------- */
+
+.status-msg {
+  margin: 10px 0;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.status-msg.success {
+  color: #16a34a;
+}
+
+.status-msg.error {
+  color: #dc2626;
+}
+
+/* ---------- BUTTON ---------- */
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: #1e40af;
+}
+
+.contact-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-header h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 22px 14px;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 22px;
+  }
+
+  .contact-header h2 {
+    font-size: 26px;
+  }
+}

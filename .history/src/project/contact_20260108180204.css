@@ -1,0 +1,155 @@
+/* ==============================
+   CONTACT PAGE (SCOPED ONLY)
+============================== */
+
+.contact-page {
+  width: 100%;
+  padding: 60px 20px;
+  background: #f5f7fb;
+  margin-top: 20px;
+
+}
+
+/* WRAPPER */
+.contact-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* LEFT */
+.contact-left {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.contact-left h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.contact-desc {
+  font-size: 15px;
+  color: #475569;
+  margin-bottom: 28px;
+}
+
+.contact-card {
+  display: flex;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  margin-bottom: 14px;
+}
+
+.contact-card svg {
+  font-size: 20px;
+  color: #2563eb;
+  margin-top: 4px;
+}
+
+.contact-card h4 {
+  font-size: 14px;
+  margin-bottom: 2px;
+  color: #0f172a;
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: #475569;
+}
+
+.contact-foot {
+  display: block;
+  margin-top: 22px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* RIGHT */
+.contact-right {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.contact-right h2 {
+  font-size: 26px;
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+/* INPUTS */
+.input-group {
+  margin-bottom: 18px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 15px 17px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #2563eb;
+}
+
+.input-group .error {
+  border-color: #dc2626;
+}
+
+.input-group small {
+  color: #dc2626;
+  font-size: 12px;
+}
+
+/* STATUS */
+.status {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.status.success {
+  color: #16a34a;
+}
+
+.status.error {
+  color: #dc2626;
+}
+
+/* BUTTON */
+.contact-right button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-right button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
