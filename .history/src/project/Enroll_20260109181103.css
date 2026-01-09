@@ -140,7 +140,8 @@ input.error {
   font-weight: 600;
   cursor: pointer;
 }
-/* ===== MODAL OVERLAY ===== */
+
+./* ===== MODAL OVERLAY ===== */
 .modal-overlay {
   position: fixed;
   inset: 0;

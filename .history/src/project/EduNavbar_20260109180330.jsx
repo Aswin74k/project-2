@@ -255,6 +255,7 @@ export default function EduNavbar() {
         </Modal.Body>
       </Modal>
 
+      {/* ================= SIGNUP MODAL ================= */}
       <Modal
         show={showSignup}
         onHide={() => {

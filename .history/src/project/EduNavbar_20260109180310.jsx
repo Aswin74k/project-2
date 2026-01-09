@@ -87,6 +87,7 @@ export default function EduNavbar() {
     if (res.success) resetLogin();
   };
 
+  /* ================= SIGNUP FORM (RHF) ================= */
   const {
     register: signupRegister,
     handleSubmit: handleSignupSubmit,
@@ -105,6 +106,7 @@ export default function EduNavbar() {
 
   return (
     <>
+      {/* ================= NAVBAR ================= */}
       <Navbar
         fixed="top"
         expand="lg"
@@ -178,6 +180,7 @@ export default function EduNavbar() {
         </Container>
       </Navbar>
 
+      {/* ================= LOGIN MODAL ================= */}
       <Modal
         show={showLogin}
         onHide={() => {
@@ -255,6 +258,7 @@ export default function EduNavbar() {
         </Modal.Body>
       </Modal>
 
+      {/* ================= SIGNUP MODAL ================= */}
       <Modal
         show={showSignup}
         onHide={() => {

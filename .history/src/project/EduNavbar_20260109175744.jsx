@@ -27,12 +27,14 @@ export default function EduNavbar() {
 
   const profileRef = useRef(null);
 
+  /* ================= SCROLL EFFECT ================= */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  /* ================= CLOSE PROFILE MENU ================= */
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (profileRef.current && !profileRef.current.contains(e.target)) {
@@ -44,6 +46,7 @@ export default function EduNavbar() {
       document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  /* ================= EXTERNAL LOGIN TRIGGER ================= */
   useEffect(() => {
     const openLogin = () => {
       setShowSignup(false);
@@ -54,6 +57,7 @@ export default function EduNavbar() {
       window.removeEventListener("showLoginModal", openLogin);
   }, []);
 
+  /* ================= AUTO CLOSE AFTER AUTH ================= */
   useEffect(() => {
     if (user) {
       const timer = setTimeout(() => {
@@ -74,6 +78,7 @@ export default function EduNavbar() {
     }
   }, [user, navigate]);
 
+  /* ================= LOGIN FORM (RHF) ================= */
   const {
     register: loginRegister,
     handleSubmit: handleLoginSubmit,
@@ -87,6 +92,7 @@ export default function EduNavbar() {
     if (res.success) resetLogin();
   };
 
+  /* ================= SIGNUP FORM (RHF) ================= */
   const {
     register: signupRegister,
     handleSubmit: handleSignupSubmit,
@@ -105,6 +111,7 @@ export default function EduNavbar() {
 
   return (
     <>
+      {/* ================= NAVBAR ================= */}
       <Navbar
         fixed="top"
         expand="lg"
@@ -178,6 +185,7 @@ export default function EduNavbar() {
         </Container>
       </Navbar>
 
+      {/* ================= LOGIN MODAL ================= */}
       <Modal
         show={showLogin}
         onHide={() => {
@@ -221,7 +229,7 @@ export default function EduNavbar() {
               <input
                 className="auth-input"
                 type={showLoginPwd ? "text" : "password"}
-                placeholder="Password" autoComplete="off"
+                placeholder="Password"
                 {...loginRegister("password", {
                   required: "Password is required",
                   
@@ -255,6 +263,7 @@ export default function EduNavbar() {
         </Modal.Body>
       </Modal>
 
+      {/* ================= SIGNUP MODAL ================= */}
       <Modal
         show={showSignup}
         onHide={() => {
@@ -320,7 +329,7 @@ export default function EduNavbar() {
               <input
                 className="auth-input"
                 type={showSignupPwd ? "text" : "password"}
-                placeholder="Password" autoComplete="off"
+                placeholder="Password" au
                 {...signupRegister("password", {
                   required: "Password is required",
                   minLength: {
@@ -343,7 +352,7 @@ export default function EduNavbar() {
               <input
                 className="auth-input"
                 type={showConfirmPwd ? "text" : "password"}
-                placeholder="Confirm password" autoComplete="off"
+                placeholder="Confirm password"
                 {...signupRegister("confirmPassword", {
                   validate: v =>
                     v === password || "Passwords do not match",

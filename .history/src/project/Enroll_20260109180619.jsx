@@ -158,28 +158,7 @@ export default function Enroll() {
         </div>
       </div>
 
- {showPopup && (
-  <div className="modal-overlay">
-    <div className="modal-box premium glass">
-      
-      <div className="success-ring">
-        ✓
-      </div>
-
-      <h3>Enrollment Confirmed</h3>
-
-      <p className="modal-desc">
-        You’re officially enrolled. Our team will reach out with
-        next steps and onboarding details shortly.
-      </p>
-
-      <span className="modal-foot">
-        Redirecting to home…
-      </span>
-
-    </div>
-  </div>
-)}    
+     
     </>
   );
 }
